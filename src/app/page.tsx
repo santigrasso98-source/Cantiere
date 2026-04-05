@@ -73,14 +73,13 @@ export default function Home() {
           <span className="hero-tagline" style={{ letterSpacing: '0.2rem' }}>Seleccionados</span>
           <h2 className="serif" style={{ fontSize: '3.5rem', marginTop: '1rem', fontWeight: 400 }}>Visión y Cantiere.</h2>
         </div>
-        
-        <ProjectSlider 
+         <ProjectSlider 
           title="Casa ST332" 
           type="Barrio Santo Tomás | Pilar"
           description="Una oportunidad de inversión estratégica diseñada para la vida contemporánea. El proyecto se define por su eficiencia espacial y una estética minimalista de alto impacto. Ubicada en el Barrio Cerrado Santo Tomás, la vivienda de 182m² totales fusiona la precisión técnica con la calidez del hogar moderno en un lote de 600m². Próximamente en construcción."
           stats={{ lote: '600 m²', cubiertos: '140 m²', semicubiertos: '42 m²' }}
           images={[
-            { src: "/img/hero-v2.png", alt: "Frente Casa ST332", label: "Fachada Principal - Acceso" },
+            { src: "/img/ST332-Frente Nocturno.jpg", alt: "Frente Casa ST332", label: "Fachada Principal - Acceso" },
             { src: "/img/ST332-Contrafrente Nocturno 1.jpg", alt: "Contrafrente 332", label: "Galería y Área Social" },
             { src: "/img/ST332-Contrafrente Nocturno 2.jpg", alt: "Vista Piscina 332", label: "Expansión y Paisajismo" }
           ]}
@@ -123,10 +122,10 @@ export default function Home() {
           </div>
           <div style={{ position: 'relative', height: '70vh', backgroundColor: '#000' }}>
             <Image 
-              src="/img/hero.png" 
+              src="/img/interior.png" 
               alt="Estudio Cantiere" 
               fill 
-              style={{ objectFit: 'cover', opacity: 0.6, filter: 'grayscale(100%)' }} 
+              style={{ objectFit: 'cover', opacity: 0.5, filter: 'grayscale(100%) brightness(0.8)' }} 
             />
             <div style={{ position: 'absolute', bottom: '2rem', right: '-2rem', padding: '2.5rem', backgroundColor: 'rgba(10,10,10,0.85)', borderLeft: '3px solid var(--accent)', backdropFilter: 'blur(10px)', zIndex: 5 }}>
               <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: 'var(--accent)', letterSpacing: '0.2rem' }}>Director</span>
