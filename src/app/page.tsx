@@ -114,10 +114,6 @@ export default function Home() {
                 <span className="stat-number" style={{ fontSize: '2.5rem' }}>15+</span>
                 <span className="stat-label" style={{ fontSize: '0.7rem' }}>Proyectos Realizados</span>
               </div>
-              <div className="stat-item" style={{ textAlign: 'left' }}>
-                <span className="stat-number" style={{ fontSize: '1.5rem', marginTop: '0.8rem', display: 'block' }}>UTDT</span>
-                <span className="stat-label" style={{ fontSize: '0.7rem' }}>Alumni Torcuato Di Tella</span>
-              </div>
             </div>
           </div>
           <div style={{ position: 'relative', height: '70vh', backgroundColor: '#000' }}>
