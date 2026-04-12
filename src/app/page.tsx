@@ -280,8 +280,6 @@ export default function Home() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.98)', zIndex: 9999, overflowY: 'auto', padding: '5rem 0' }}
-              onMouseEnter={() => { setIsHovered(true); setCursorText("CERRAR"); }}
-              onMouseLeave={() => { setIsHovered(false); setCursorText(""); }}
               onClick={() => setSelectedProject(null)}
             >
               <button
