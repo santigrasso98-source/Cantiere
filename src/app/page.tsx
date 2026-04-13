@@ -10,11 +10,8 @@ export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [cursorText, setCursorText] = useState("");
 
   const { scrollYProgress } = useScroll();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const projects = [
     {
@@ -53,19 +50,9 @@ export default function Home() {
       setScrolled(window.scrollY > 50);
     };
 
-    const mouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
-    };
-
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('mousemove', mouseMove);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', mouseMove);
     };
   }, []);
 
@@ -88,19 +75,6 @@ export default function Home() {
         className="scroll-progress"
         style={{ scaleX: scrollYProgress }}
       />
-
-      {/* Custom Cursor */}
-      <motion.div
-        className={`custom-cursor ${isHovered ? 'cursor-hover' : ''}`}
-        animate={{
-          x: mousePosition.x - (isHovered ? 40 : 20),
-          y: mousePosition.y - (isHovered ? 40 : 20)
-        }}
-        transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.5 }}
-      >
-        <span className="cursor-text">{cursorText}</span>
-        {!cursorText && <div className="custom-cursor-dot" />}
-      </motion.div>
 
       {/* Header */}
       <header className={`${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'active' : ''}`}>
@@ -211,15 +185,11 @@ export default function Home() {
             <a
               href="#projects"
               className="btn btn-primary"
-              onMouseEnter={() => { setIsHovered(true); setCursorText("VER"); }}
-              onMouseLeave={() => { setIsHovered(false); setCursorText(""); }}
             >Ver Portfolio</a>
             <a
               href="#about"
               className="btn btn-outline"
               style={{ color: 'white' }}
-              onMouseEnter={() => { setIsHovered(true); setCursorText("SOBRE"); }}
-              onMouseLeave={() => { setIsHovered(false); setCursorText(""); }}
             >Nuestra Visión</a>
           </motion.div>
         </div>
@@ -251,8 +221,6 @@ export default function Home() {
                 className="project-card"
                 style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '4px' }}
                 onClick={() => setSelectedProject(project)}
-                onMouseEnter={() => { setIsHovered(true); setCursorText("DETALLE"); }}
-                onMouseLeave={() => { setIsHovered(false); setCursorText(""); }}
               >
                 <div style={{ position: 'relative', height: '400px', width: '100%', overflow: 'hidden' }}>
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }} style={{ height: '100%' }}>
